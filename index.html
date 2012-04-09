@@ -60,48 +60,5 @@
       </footer>
     </div>
 
-    <script type="text/javascript" charset="utf-8">
-$(function() {
-  	  $.ajax({
-  							type: "GET",
-  							url:"http://jesurveille.fr/captcha/captcha_github.php",
-  							data: "type=refreshKey",
-  							cache: false,
-  							success: function(json){
-							
-  								$(".captcha-container").captcha({
-									key_image:json.img,
-									key_picto:json.picto
-								});
-  							}
- 						});	
-			
-			$('#submit').click( function(event) {
-				$.ajax({
-  					type: "GET",
-  					url: "http://jesurveille.fr/captcha/exemple_github.php",
-  					data: $('#form').serialize(),
-  					cache: false,
-  					success: function(retour){
-						alert (retour);
-							var url ="http://jesurveille.fr/captcha/captcha_github.php";
-						$.ajax({
-  							type: "GET",
-  							url: url,
-  							data: "type=refreshKey",
-  							cache: false,
-  							success: function(json){
-								$('.captcha-left').empty();
-  								$(".captcha-container").captcha({
-									key_image:json.img,
-									key_picto:json.picto
-								});
-  							}
- 						});	
-  					}
- 				});	
-			});
-		});	
-    </script>
   </body>
 </html>
