@@ -75,7 +75,7 @@
 $(function() {
   	  $.ajax({
   							type: "GET",
-  							url:"http://jesurveille.fr/captcha/captcha.php",
+  							url:"http://jesurveille.fr/captcha/captcha_github.php",
   							data: "type=refreshKey",
   							cache: false,
   							success: function(json){
@@ -89,15 +89,15 @@ $(function() {
 			
 			$('#submit').click( function(event) {
 				$.ajax({
-  					type: "POST",
-  					url: "http://jesurveille.fr/captcha/exemple.php",
+  					type: "GET",
+  					url: "http://jesurveille.fr/captcha/exemple_github.php",
   					data: $('#form').serialize(),
   					cache: false,
   					success: function(retour){
 						alert (retour);
-							var url ="http://jesurveille.fr/captcha/captcha.php";
+							var url ="http://jesurveille.fr/captcha/captcha_github.php";
 						$.ajax({
-  							type: "POST",
+  							type: "GET",
   							url: url,
   							data: "type=refreshKey",
   							cache: false,
