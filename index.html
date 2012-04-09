@@ -45,7 +45,7 @@
 	<!-- Début du Captcha captcha -->	
 	<div class="captcha-container">
     	You must enable javascript to see captcha here!
-    	<div id='captcha-bottom'><a href='http://www.jesurveille.fr'>Je Surveille</a> - AntiBot<br> <img src="http://jesurveille.fr/captcha/imgs/MainScreen.png" alt="ajax captcha php source"></div>
+    	<div id='captcha-bottom'><a href='http://www.jesurveille.fr'>Je Surveille</a> - AntiBot<br> </div>
    	</div>
 	<!-- Fin du Captcha -->
 	<p><input id="submit" type="button" name="submit" value="Envoyer" /></p>
@@ -74,7 +74,7 @@
     <script type="text/javascript" charset="utf-8">
 $(function() {
   	  $.ajax({
-  							type: "POST",
+  							type: "GET",
   							url:"http://jesurveille.fr/captcha/captcha.php",
   							data: "type=refreshKey",
   							cache: false,
