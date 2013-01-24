@@ -10,13 +10,12 @@ Ce captcha génère une image qui decrit une icone (parmis 5 presentes) , Il fau
 Les iconnes sont toutes parametrables. Vous pouvez creer votre pack d'iconnes.
 
 Fonctionnement:
---- // a ajouter dans votre formulaire et dans le fichier qui traite la reponse
-<?php
-session_start();
-include "captcha/captcha.php";
-$captcha = new Captcha;
-?>
----
+>// a ajouter dans votre formulaire et dans le fichier qui traite la reponse
+><?php
+>session_start();
+>include "captcha/captcha.php";
+>$captcha = new Captcha;
+>?>
 
 
 
