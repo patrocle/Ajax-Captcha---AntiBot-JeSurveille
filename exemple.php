@@ -15,16 +15,10 @@ $captcha = new Captcha;
 		body { background-color: white; }
 	</style>
 	<script type="text/javascript" charset="utf-8">
-	<?php
-		
-		
-	?>
 		$(function() {
 			$(".captcha-container").captcha({
-			<?php /*	key_image:"<?=$captcha->genKeyImage();?>", */ ?>
 				key_picto:"<?=$captcha->genKeyPicto();?>"
 			});
-			
 			$('#submit').click( function(event) {
 				$.ajax({
   					type: "POST",
