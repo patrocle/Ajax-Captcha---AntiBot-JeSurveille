@@ -42,11 +42,12 @@ $captcha = new Captcha;
   							}
  						});	
   					}
- 				});	 
+ 				});	
 			});
 		});	
 	</script>
 </head>
+
 <body>
  
 <!-- Exemple de formulaire -->	
