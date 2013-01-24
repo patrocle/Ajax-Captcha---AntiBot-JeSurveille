@@ -2,7 +2,7 @@
 session_start();
 include "captcha/captcha.php";
 $captcha = new Captcha;
-?>
+?> 
 <html>
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
