@@ -22,6 +22,6 @@ $captcha = new Captcha;
 
 ### Requis
 
-> jQuery Version >= 1.5
+> jQuery Version >= 1.5 
 > PHP Version >= 5.2
 > Bibliotheque GD
