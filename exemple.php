@@ -7,8 +7,8 @@ $captcha = new Captcha;
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<title>Ajax Captcha</title>
-	<script type="text/javascript" src="latest-jquery/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript" src="latest-jquery-ui/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
 	<script type="text/javascript" src="captcha/jquery.captcha.js"></script>
 	<link href="captcha/captcha.css" rel="stylesheet" type="text/css" />
 	<style type="text/css" media="screen">
@@ -17,33 +17,38 @@ $captcha = new Captcha;
 	<script type="text/javascript" charset="utf-8">
 		$(function() {
 			$(".captcha-container").captcha({
-				key_picto:"<?=$captcha->genKeyPicto();?>"
+				key_picto:"<?=$captcha->genKeyPicto();?>",
+				url : "captcha/captcha.php",
+				key_picto:"<?=$captcha->genKeyPicto();?>",
 			});
 			$('#submit').click( function(event) {
 				$.ajax({
   					type: "POST",
-  					url: "captcha/exemple.php",
-  					data: $('#form').serialize(),
+  					url: "exemple-post-action.php",		//the url of the "action" page
+  					data: $('#form').serialize(),	// #from is the id of your form...
   					cache: false,
-  					success: function(retour){
-						alert (retour);
-							var url ="captcha/captcha.php";
-						$.ajax({
-  							type: "POST",
-  							url: url,
-  							data: "type=refreshKey",
-  							cache: false,
-  							success: function(json){
-								$('.captcha-left').empty();
-  								$(".captcha-container").captcha({
-									key_image:json.img,
-									key_picto:json.picto
-								});
-  							}
- 						});	
+  					success: function(retour){		//your action after the validation or not
+						alert (retour);				
+						retry();
   					}
  				});	
 			});
+			
+			function retry(){
+				var url ="captcha/captcha.php";
+				$.ajax({
+					type: "POST",
+					url: url,
+					data: "type=refreshKey",
+					cache: false,
+					success: function(json){
+						$('.captcha-left').empty();
+						$(".captcha-container").captcha({
+							key_picto:json.picto
+						});
+					}
+				});	
+			}
 		});	
 	</script>
 </head>

@@ -1,6 +1,6 @@
 <?
 session_start();
-include "captcha.php";
+include "captcha/captcha.php";
 $captcha = new Captcha;
 
 if(isset($_POST['captcha']) && $captcha->validate($_POST)){
