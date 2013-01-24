@@ -42,7 +42,7 @@ $captcha = new Captcha;
   							}
  						});	
   					}
- 				});	
+ 				});	 
 			});
 		});	
 	</script>
