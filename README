@@ -4,7 +4,7 @@ Ajax Captcha - Drag and drop
 JeSurveille
 ---------------------
 
-Ce captcha genere une image qui decrit une icone parmis 5 presente, Il faut deplacer ( drag and drop ) cette icone dans l'endroit indiqué.
+Ce captcha génère une image qui decrit une icone (parmis 5 presentes) , Il faut deplacer (drag and drop) cette icone dans l'endroit indiqué.
 
 
 The quick brown fox jumped over the lazy
@@ -15,5 +15,3 @@ dog's back.
 > jQuery Version >= 1.5
 > PHP Version >= 5.2
 > Bibliotheque GD
->
-> ## This is an H2 in a blockquote
