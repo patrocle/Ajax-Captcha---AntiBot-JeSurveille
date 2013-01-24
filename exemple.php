@@ -48,7 +48,7 @@ $captcha = new Captcha;
 	</script>
 </head>
 <body>
-
+ 
 <!-- Exemple de formulaire -->	
 <form method="post" id="form">
 	<!-- Début du Captcha captcha -->	
