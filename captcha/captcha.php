@@ -19,6 +19,6 @@ if (isset($_POST["type"]) && $_POST["type"]=='refreshKey'){
 	$json_keys= json_encode($keys);
 	header('Content-Type: application/json');
 	echo $json_keys;
-}
+} 
 ?>
 
